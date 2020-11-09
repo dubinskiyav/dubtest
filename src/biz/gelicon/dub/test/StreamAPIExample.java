@@ -177,7 +177,7 @@ public class StreamAPIExample {
 
     public void test6() {
         // список numbers пустой
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         Optional<Integer> min = numbers.stream().min(Integer::compare);
         if (min.isPresent()) {
             System.out.println(min.get());  // java.util.NoSuchElementException
