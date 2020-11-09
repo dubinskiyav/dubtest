@@ -19,6 +19,7 @@ public class LambdaTest {
         // Сортируем компанатором
         Arrays.sort(strings, new LengthStringComparator());
         for (int i = 0; i < strings.length; i++) {
+            // Проверим
             System.out.println(strings[i]);
             // ничего не делаем
         }
