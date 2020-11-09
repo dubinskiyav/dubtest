@@ -155,7 +155,7 @@ public class StreamAPIExample {
         // количество элементов с длиной не больше 3 символов
         System.out.println(names.stream().filter(n -> n.length() <= 3).count());
         // min и max
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         numbers.addAll(Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9}));
         // Optional<T> min(Comparator<? super T> comparator)
         Optional<Integer> min = numbers.stream().min(Integer::compare);
