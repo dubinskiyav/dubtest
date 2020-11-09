@@ -20,6 +20,7 @@ public class LambdaTest {
         Arrays.sort(strings, new LengthStringComparator());
         for (int i = 0; i < strings.length; i++) {
             System.out.println(strings[i]);
+            // ничего не делаем
         }
         // Сортируем с помощью лямбда-выражения
         Arrays.sort(strings,
