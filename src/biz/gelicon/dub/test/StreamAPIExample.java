@@ -267,11 +267,22 @@ public class StreamAPIExample {
                 .findAny()
                 .orElse(-1).equals(150)) {
         }
-        // или проще
-        if (streamTest.listPhoneList().stream()
-                .anyMatch(a -> a.getPrice() == 150)
-        ) {
-        }
+        // Сцепление через запятую
+        String s = streamTest.listPhoneList().stream()
+                .map(d -> d.getCompany())
+                .reduce((t, u) -> t + "," + u)
+                .orElse("");
+    }
+    public void test10() {
+        // Стрим в лист
+        List<Phone> phonesCopy = Stream.of(
+                new Phone("iPhone X", "Apple", 600),
+                new Phone("Pixel 2", "Google", 500),
+                new Phone("iPhone 8", "Apple", 450),
+                new Phone("Nokia 9", "HMD Global", 150),
+                new Phone("Galaxy S9", "Samsung", 300))
+                .map(p -> new Phone(p.getCompany(),p.getName(),p.getPrice() * 10))
+                .collect(Collectors.toList());
     }
 }
 

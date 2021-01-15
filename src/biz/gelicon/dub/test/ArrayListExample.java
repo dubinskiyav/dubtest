@@ -1,6 +1,7 @@
 package biz.gelicon.dub.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -154,6 +155,23 @@ public class ArrayListExample {
             value.level = value.level + 2;
         }
         appealactiontodel.forEach(a -> System.out.println(a.appealaction_id + " " + a.level));
+
+    }
+
+    public void test5(){
+        // цикл
+        for (String element : Arrays.asList("a", "b", "c", "d", "e")) {
+            System.out.println(element);
+        }
+        List<String> list = Arrays.asList("a", "b", "c", "d", "e");
+        list.forEach(element -> {
+            System.out.println(element);
+            System.out.println(element);
+        });
+        list.stream().forEach(element -> {
+            System.out.println(element);
+            System.out.println(element);
+        });
 
     }
 
