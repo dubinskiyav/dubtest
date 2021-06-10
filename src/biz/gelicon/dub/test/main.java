@@ -4,6 +4,11 @@ public class main {
 
     public static void main(String args[]) {
         System.out.println("Hello World");
+        if (true) {
+            BitTest bitTest = new BitTest();
+            //bitTest.test1();
+            bitTest.test2();
+        }
         if (false) {
             ArrayListExample arrayListExample = new ArrayListExample();
             arrayListExample.test1();
@@ -68,7 +73,7 @@ public class main {
             StreamCreateTest streamCreateTest = new StreamCreateTest();
             streamCreateTest.test1();
         }
-        if (true) {
+        if (false) {
             LambdaTest lambdaTest = new LambdaTest();
             lambdaTest.test1();
         }
