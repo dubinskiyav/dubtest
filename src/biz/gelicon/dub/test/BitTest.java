@@ -2,12 +2,12 @@ package biz.gelicon.dub.test;
 
 public class BitTest {
 
-    public void test1(){
+    public void test1() {
         // https://javarush.ru/quests/lectures/questmultithreading.level10.lecture01
 
         int x = 342;
         System.out.println(x + " = " + Integer.toBinaryString(x));
-        for (int i : new int[]{1, 2, 3, 4, 5, 6,7,8,9,10}) {
+        for (int i : new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) {
             System.out.println(i + " = " + Integer.toBinaryString(i));
         }
         // Шестнадцатиричная система исчисления
@@ -20,7 +20,7 @@ public class BitTest {
         }
     }
 
-    public void test2(){
+    public void test2() {
         for (int i : new int[]{0b0, 0b1, 0b10, 0b100, 0b1000, 0b1101}) {
             System.out.println(i + " = " + Integer.toBinaryString(i));
             System.out.println("Инвертируем 0 бит = " + Integer.toBinaryString(flipBit(i, 0)));
@@ -31,12 +31,29 @@ public class BitTest {
         System.out.println("Установка маски");
         int source = 0b000101010011;
         System.out.println("source = " + Integer.toBinaryString(source));
-        System.out.println("         " + Integer.toBinaryString(setBit(source,2)));
+        System.out.println("         " + Integer.toBinaryString(setBit(source, 2)));
 
         System.out.println("Снятие маски");
         source = 0b000101010111;
         System.out.println("source = " + Integer.toBinaryString(source));
-        System.out.println("         " + Integer.toBinaryString(resetBit(source,2)));
+        System.out.println("         " + Integer.toBinaryString(resetBit(source, 2)));
+
+        System.out.println("Получение бита");
+        source = 0b000101010111;
+        System.out.println("source = " + Integer.toBinaryString(source));
+        System.out.println("0-й бит source = " + getBit(source, 0));
+        System.out.println("1-й бит source = " + getBit(source, 1));
+        System.out.println("2-й бит source = " + getBit(source, 2));
+        System.out.println("3-й бит source = " + getBit(source, 3));
+        System.out.println("4-й бит source = " + getBit(source, 4));
+        System.out.println("5-й бит source = " + getBit(source, 5));
+        System.out.println("6-й бит source = " + getBit(source, 6));
+        System.out.println("7-й бит source = " + getBit(source, 7));
+        System.out.println("8-й бит source = " + getBit(source, 8));
+        System.out.println("9-й бит source = " + getBit(source, 9));
+        System.out.println("10-й бит source = " + getBit(source, 10));
+        System.out.println("11-й бит source = " + getBit(source, 11));
+        System.out.println("12-й бит source = " + getBit(source, 12));
     }
 
     // Инвертирование бита в числе (нумерация битов с 0)
@@ -71,4 +88,13 @@ public class BitTest {
         return value & mm;
     }
 
+    // Получить значение бита в числе (нумерация битов с 0)
+    public static int getBit(int value, int position) {
+        // Непонятно как, но работает
+        if (value << ~position < 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }

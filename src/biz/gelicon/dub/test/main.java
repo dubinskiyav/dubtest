@@ -5,9 +5,15 @@ public class main {
     public static void main(String args[]) {
         System.out.println("Hello World");
         if (true) {
+            XMLParseTest xmlParseTest = new XMLParseTest();
+            xmlParseTest.test1();
+        }
+        if (false) {
             BitTest bitTest = new BitTest();
             //bitTest.test1();
             bitTest.test2();
+            int VISIBLE_FLAG = 0b0100;
+            System.out.println("VISIBLE_FLAG = " + VISIBLE_FLAG);
         }
         if (false) {
             ArrayListExample arrayListExample = new ArrayListExample();
